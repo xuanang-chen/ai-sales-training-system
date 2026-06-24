@@ -2,7 +2,7 @@
 基于Python+LangChain+分层RAG搭建的通用销售实训原型，面向各行业销售人员标准化话术培训，采用固定两段式LLM链式流程，保证考核评判标准统一可控。
 
 ## 技术栈
-Python、LangChain、RAG检索增强、豆包LLM API、Chroma向量数据库
+Python、LangChain、RAG检索增强、LLM API、Chroma向量数据库
 
 ## 四大核心模块架构
 1. **决策树流程调度引擎**
