@@ -15,7 +15,3 @@ Python、LangChain、RAG检索增强、豆包LLM API、Chroma向量数据库
 4. **两段式串行Chain评分复盘模块**
 训练结束串行执行两轮LLM调用：打分环节输出结构化量化得分；复盘环节拼接对话记录、打分结果、RAG检索标杆话术，生成完整个性化改进报告。
 
-## 快速启动教程
-1. 安装项目依赖
-```bash
-pip install -r requirements.txt
