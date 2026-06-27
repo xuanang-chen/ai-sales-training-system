@@ -1,8 +1,4 @@
-streamlit
-langchain
-langchain-openai
-langchain-community
-chromadb
-openai>=1.0
-pandas
-python-dotenv
+streamlit>=1.36.0
+pandas>=2.0.0
+openai>=1.0.0
+python-dotenv>=1.0.0
