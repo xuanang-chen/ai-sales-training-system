@@ -1,0 +1,8 @@
+streamlit
+langchain
+langchain-openai
+langchain-community
+chromadb
+openai>=1.0
+pandas
+python-dotenv

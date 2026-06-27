@@ -1,0 +1,180 @@
+{
+  "version": "1.0",
+  "strength_levels": [
+    {
+      "level": "strong",
+      "name": "强",
+      "target_bucket": "core_goals",
+      "description": "该顾虑是本次客户最主要的阻力，必须作为核心训练目标。"
+    },
+    {
+      "level": "medium",
+      "name": "中",
+      "target_bucket": "secondary_goals",
+      "description": "该顾虑是本次客户的重要影响因素，应作为次级训练目标。"
+    },
+    {
+      "level": "weak",
+      "name": "弱",
+      "target_bucket": "observation_goals",
+      "description": "该顾虑较弱，系统只在学员自然体现相关能力时记录，不强制追问。"
+    }
+  ],
+  "assignment_rule": {
+    "method": "random_permutation",
+    "rule": "每次训练将价格敏感、竞品比较、需求模糊三个偏好随机分配为强、中、弱。"
+  },
+  "mandatory_core_goals": [
+    {
+      "goal_id": "product_basic_introduction",
+      "name": "产品基础介绍",
+      "description": "能够清楚说明本次产品的基本定位、适用场景、核心价值、关键边界，并让客户理解这是什么产品、解决什么问题、为什么值得继续沟通。"
+    }
+  ],
+  "preference_types": [
+    {
+      "preference_id": "price_sensitive",
+      "name": "价格敏感",
+      "description": "客户关注价格、预算压力、患者或企业支付意愿和性价比。",
+      "sample_customer_signals": [
+        "你们产品价格偏高。",
+        "如果效果差不多，为什么不用更便宜的方案？",
+        "这个投入到底值不值得？"
+      ],
+      "goals_by_strength": {
+        "strong": [
+          {
+            "goal_id": "understand_price_pressure",
+            "name": "理解客户价格压力",
+            "description": "能够先承认并理解客户的预算或支付压力，而不是直接反驳。"
+          },
+          {
+            "goal_id": "value_expression",
+            "name": "价值表达",
+            "description": "能够把价格问题转化为价值、收益、风险降低或长期效果的讨论。"
+          }
+        ],
+        "medium": [
+          {
+            "goal_id": "cost_effectiveness_expression",
+            "name": "成本效益说明",
+            "description": "能够用客户能理解的方式说明价格与实际收益之间的关系。"
+          },
+          {
+            "goal_id": "next_step_advancement",
+            "name": "推进下一步沟通",
+            "description": "能够在回应价格顾虑后，自然推动客户进入下一步了解、试用或评估。"
+          }
+        ],
+        "weak": [
+          {
+            "goal_id": "avoid_simple_discounting",
+            "name": "避免单纯降价",
+            "description": "不把降价作为唯一回应，而是先确认客户关注点并表达价值。"
+          },
+          {
+            "goal_id": "clarify_price_concern",
+            "name": "澄清价格背后的真实顾虑",
+            "description": "能够识别客户说价格贵时，背后可能是预算、价值感知或替代方案顾虑。"
+          }
+        ]
+      }
+    },
+    {
+      "preference_id": "competitor_comparison",
+      "name": "竞品比较",
+      "description": "客户会将产品与竞品、替代方案或现有方案进行比较。",
+      "sample_customer_signals": [
+        "我们现在常用的是B，我想了解A相比B具体适合在哪些场景。",
+        "B的价格和使用习惯对我们更友好，A的价值主要体现在哪里？",
+        "A和B相比，有哪些可以客观说明的差异？"
+      ],
+      "goals_by_strength": {
+        "strong": [
+          {
+            "goal_id": "objective_competitor_comparison",
+            "name": "客观竞品比较",
+            "description": "能够基于事实、适用场景和客户决策标准进行客观比较。"
+          },
+          {
+            "goal_id": "avoid_disparaging_competitors",
+            "name": "避免贬低竞品",
+            "description": "不通过攻击竞品来证明自身价值，而是进行专业、克制的差异化表达。"
+          }
+        ],
+        "medium": [
+          {
+            "goal_id": "differentiated_value_expression",
+            "name": "差异化价值表达",
+            "description": "能够说明自身产品与竞品或现有方案的关键差异和适用条件。"
+          },
+          {
+            "goal_id": "evidence_based_expression",
+            "name": "证据化表达",
+            "description": "能够用数据、案例、临床经验或业务证据支撑观点。"
+          }
+        ],
+        "weak": [
+          {
+            "goal_id": "identify_current_usage_habit",
+            "name": "识别客户现有使用习惯",
+            "description": "能够先了解客户目前使用竞品或现有方案的原因。"
+          },
+          {
+            "goal_id": "return_to_decision_criteria",
+            "name": "回到客户决策标准",
+            "description": "能够把竞品比较拉回客户真正关心的决策因素。"
+          }
+        ]
+      }
+    },
+    {
+      "preference_id": "unclear_need",
+      "name": "需求模糊",
+      "description": "客户尚未明确表达需求，需要销售通过提问和确认挖掘真实需求。",
+      "sample_customer_signals": [
+        "我先了解一下，不一定会用。",
+        "你简单介绍一下吧，我看看是否适合。",
+        "目前还没有特别明确的需求。"
+      ],
+      "goals_by_strength": {
+        "strong": [
+          {
+            "goal_id": "discover_real_needs",
+            "name": "挖掘真实需求",
+            "description": "能够通过提问识别客户的真实问题、使用场景和潜在痛点。"
+          },
+          {
+            "goal_id": "ask_open_questions",
+            "name": "提开放式问题",
+            "description": "能够使用开放式问题引导客户表达背景、标准和顾虑。"
+          }
+        ],
+        "medium": [
+          {
+            "goal_id": "summarize_and_confirm_needs",
+            "name": "总结确认客户需求",
+            "description": "能够复述和确认客户表达的信息，避免自说自话。"
+          },
+          {
+            "goal_id": "build_communication_trust",
+            "name": "建立沟通信任",
+            "description": "能够通过尊重、倾听和专业回应降低客户防备。"
+          }
+        ],
+        "weak": [
+          {
+            "goal_id": "identify_hidden_concerns",
+            "name": "识别隐性顾虑",
+            "description": "能够发现客户没有直接说出口的担忧或决策阻碍。"
+          },
+          {
+            "goal_id": "avoid_premature_pitching",
+            "name": "避免过早强推产品",
+            "description": "在需求尚未明确前，不急于大量介绍产品或逼迫客户决策。"
+          }
+        ]
+      }
+    }
+  ]
+}
